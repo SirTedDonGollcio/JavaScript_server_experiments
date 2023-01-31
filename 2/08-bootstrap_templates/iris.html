@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Iris dataset</title>
+        <link rel="stylesheet"
+              href="/static/css/bootstrap-3.4.1-dist/css/bootstrap.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Iris dataset</h3>
+                </div>
+                <div class="panel-body">
+                    {% if data %}
+                        <table class="table">
+                            <thead>
+                                <td>id</td>
+                                <td>sepal_length</td>
+                                <td>sepal_width</td>
+                                <td>petal_length</td>
+                                <td>petal_width</td>
+                                <td>species</td>
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                    <tr>
+                                        <td><a href="/update-iris/{{row[0]}}">{{row[0]}}</a></td>
+                                        <td>{{row[1]}}</td>
+                                        <td>{{row[2]}}</td>
+                                        <td>{{row[3]}}</td>
+                                        <td>{{row[4]}}</td>
+                                        <td>{{row[5]}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                      <div class="alert alert-danger" role="alert">no data</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <script src="/static/css/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>

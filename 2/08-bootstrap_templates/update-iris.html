@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Iris dataset</title>
+        <link rel="stylesheet"
+              href="/static/css/bootstrap-3.4.1-dist/css/bootstrap.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Update Iris</h3>
+                </div>
+                <div class="panel-body">
+                    {% if data %}
+                        <form class="form-horizontal" action="/update-iris" method="post">
+                            <div class="form-group">
+                                <label for="iris-id" class="col-sm-2 control-label">Iris ID</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="iris-id" id="iris-id" value="{{data[0]}}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sepal-length" class="col-sm-2 control-label">Sepal length</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="sepal-length" id="sepal-length" value="{{data[1]}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sepal-width" class="col-sm-2 control-label">Sepal width</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="sepal-width" id="sepal-width" value="{{data[2]}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="petal-length" class="col-sm-2 control-label">Petal length</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="petal-length" id="petal-length" value="{{data[3]}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="petal-width" class="col-sm-2 control-label">Petal width</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="petal-width" id="petal-width" value="{{data[4]}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="species" class="col-sm-2 control-label">Species</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="species" id="species" value="{{data[5]}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">no data</div>
+                    {% endif %}
+                    <script src="/static/css/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+h1 {color: red;}
+
+container {
+    width: 800px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border: 2px soild #5085a5;
+}
+
+thead {
+    background-color: #0fc1e4;
+}
+
+tbody {
+    background-color: #f7f9fb;
+}
+
+td {
+    border: 1px solid #5085a5;
+}
